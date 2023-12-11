@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Welcome</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="assets/styles.css">
+  <title>Welcome</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3XFP3Z5B7C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3XFP3Z5B7C');
+  </script>
 </head>
 <body>
   <canvas id="background"></canvas>
-  <!-- <div class="container">
-    <div class="header">
-      <h1>Welcome</h1>
-    </div>
-    <div class="content">
-      <div class="profile-image"></div>
-    </div>
-  </div> -->
   <script src="https://cdn.babylonjs.com/babylon.js"></script>
   <script src="assets/script.js"></script>
 </body>
