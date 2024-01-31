@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Noto Sans HK' rel='stylesheet'>
+  <link rel="stylesheet" href="css/custom.css">
+  <title>GAPSK AR挑戰榜</title>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="homepage-top">
+      <div class="container">
+        <h1 class="h1 fw-bold web-title">GAPSK AR挑戰榜</h1>
+
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <div class="government-funded-programme">
+              政府資助計劃
+            </div>
+          </div>
+          <div class="col text-end px-0">
+            <span>歡迎，陳大文<button type="button" class="btn  btn-logout">登出</button></span>
+          </div>
+          <div class="col-auto text-end">
+            <div class="ranking-board">
+              <a href="ranking-board.html" class="btn btn-primary btn-sm" title="排行榜">排行榜</a>
+            </div>
+          </div>
+        </div>
+        <div class="home-fg"></div>
+      </div>
+    </div>
+
+    <div class="homepage-bottom">
+      <div class="container">
+        <div class="organizer_supporting-agency mb-4">
+          <div class="row align-items-start">
+            <div class="col text-center">
+              <!-- organizer -->
+              <h2 class="fs-6 my-2">主辦單位</h2>
+              <img class="mb-2" src="../images/logo-organizer.png" height="75" alt="語文推廣委員會">
+            </div>
+            <div class="col text-center">
+              <!-- supporting-agency -->
+              <h2 class="fs-6 my-2">支持及撥款單位</h2>
+              <img class="mb-2" src="../images/logo-supporting-agency.png" height="75" alt="語文基金、語常會">
+            </div>
+          </div>
+        </div>
+        <div class="d-flex mb-4">
+          <a href="registration.html" type="button" class="btn btn-outline-primary btn-lg flex-fill" title="報名申請">報名申請</a>
+          <a href="login.html" class="btn btn-primary btn-lg flex-fill ms-3" title="前往登入">前往登入</a>
+        </div>
+        <div class="d-flex mb-4">
+          <button type="button" class="btn btn-outline-primary btn-lg flex-fill" id="shareButton">分享</button>
+          <button type="button" class="btn btn-primary btn-lg flex-fill ms-3" data-bs-toggle="modal"
+            data-variant="startConfirmation" data-bs-target="#gameRulesModal">挑戰 X1</button>
+        </div>
+        <p class="text-muted text-center fw-bold">
+          <a href="#" class="text-reset mx-2" data-bs-toggle="modal" data-variant="gameRules"
+            data-bs-target="#gameRulesModal">遊戲規則</a>
+          <a href="#" class="text-reset mx-2" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">個人資料收集聲明</a>
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- gameRulesModal -->
+  <form id="startConfirmationForm">
+    <div class="modal ar-modal fade" id="gameRulesModal" tabindex="-1" aria-labelledby="gameRulesModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="gameRulesModalLabel">遊戲規則</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="my-2">
+              <p>
+                在進入遊戲前，您需要允許網頁程式使用攝影機和麥克風，并了解以下遊戲規則：</p>
+              <ul>
+                <li>可以輸入學校名稱、就讀年級、學生姓名及密碼作登入或報名申請挑戰；</li>
+                <li>分3組別，分別是初小組 (小一及小二)中小組、 (小三及小四)及高小組 (小五及小六) ；</li>
+                <li>每人每日最多可挑戰3次；</li>
+                <li>每組別可挑戰10題；</li>
+                <li>每題限時5秒內回答；</li>
+                <li>有1次答錯機會，第2次答錯即遊戲結束；</li>
+                <li>以答題準確性及時間長短以計算排名；</li>
+                <li>可以分享給其他學生一齊挑戰。</li>
+              </ul>
+            </div>
+            <div>
+              <p class="fw-bold">玩法介紹</p>
+              <div class="gameplay-introduction-animation">
+
+              </div>
+            </div>
+            <div class="mt-3 form-check ignore-prompt-check">
+              <input type="checkbox" class="form-check-input" id="ignorePromptCheckbox">
+              <label class="form-check-label" for="ignorePromptCheckbox">不再提示</label>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary btn-lg flex-fill" data-bs-dismiss="modal">返回</button>
+          </div>
+          <div class="modal-footer startConfirmationFooter">
+            <button type="button" class="btn btn-outline-secondary btn-lg flex-fill" data-bs-dismiss="modal">返回</button>
+            <button type="submit" class="btn btn-primary flex-fill btn-lg">確認</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- privacyPolicyModal -->
+  <div class="modal ar-modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="privacyPolicyModalLabel">個人資料收集聲明</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="my-2">
+            <p class="fs-18 fw-bold">
+              收集目的
+            </p>
+            <ul class="list-style-decimal">
+              <li>
+                <p>比賽報名表格(印刷或網上版本)內提供的一切個人資料，只供為GAPSK語文推廣委員會(下稱"本會")作以下之用途: </p>
+                <ul class="list-style-lower-roman">
+                  <li>登記參選作品及確認參加者之參加資格； </li>
+                  <li>與參加者通訊； </li>
+                  <li>公布比賽結果及頒發獎項； </li>
+                  <li>於比賽作品之出版、列印、宣傳及上載於網站及社交媒體中辨認參加者； </li>
+                  <li>發放有關本會之比賽及活動資訊。</li>
+                </ul>
+              </li>
+              <li>參加者提供個人資料純屬自願，如你未能提供足夠的資料，本會未必能處理你的報名或確認你的參加資格。</li>
+              <li>
+                <p>為了執行上述的目的，你的個人資料不會提供予未經授權人士及機構。查閱個人資料根據《個人資料(私隱)條例》(第486章)，你有權取得及修改你的個人資料。如有需要，應聯絡：</p>
+                <p class="fw-bold">GAPSK語文推廣委員會</p>
+                <p>
+                  地址：香港九龍旺角彌敦道625號雅蘭中心二期1003-1009室<br>
+                  熱線電話：2110 3661/3101 0800<br>
+                  傳真號碼：2869 8218<br>
+                  電郵：ccsc@gapsk.org<br>
+                </p>
+
+              </li>
+            </ul>
+            <p>以上所有條款之內容，本會可作更改而無須另行通知。GAPSK語文推廣委員會會保留最終之決定權。</p>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary btn-lg flex-fill" data-bs-dismiss="modal">返回</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--  -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 當頁面加載完成時檢查local storage中的值
+    window.onload = function () {
+      var ignorePromptCheckbox = document.getElementById("ignorePromptCheckbox");
+      var isIgnored = localStorage.getItem("ignorePrompt");
+
+      if (isIgnored === "true") {
+        ignorePromptCheckbox.checked = true;
+      }
+    };
+
+    // 當表單提交時觸發的函數
+    function handleSubmit(event) {
+      event.preventDefault(); // 防止表單提交刷新頁面
+
+      var ignorePromptCheckbox = document.getElementById("ignorePromptCheckbox");
+
+      if (ignorePromptCheckbox.checked) {
+        localStorage.setItem("ignorePrompt", "true");
+      } else {
+        localStorage.removeItem("ignorePrompt");
+      }
+
+      // 在這裡可以添加其他處理表單的代碼
+      alert("AR Game Entering");
+      window.location.href = "ar-game.html";
+    }
+
+    // 為表單添加提交事件的監聽器
+    var form = document.querySelector("#startConfirmationForm");
+    form.addEventListener("submit", handleSubmit);
+
+    //gameRulesModal
+
+    const gameRulesModal = document.getElementById('gameRulesModal')
+    gameRulesModal.addEventListener('show.bs.modal', event => {
+      // do something...
+      var button = event.relatedTarget;
+      var variant = button.getAttribute("data-variant");
+
+      if (variant == "startConfirmation") {
+        gameRulesModal.classList.add("startConfirmation");
+
+        var isIgnored = localStorage.getItem("ignorePrompt");
+        if (isIgnored === "true") {
+          alert("AR Game Entering");
+          window.location.href = "ar-game.html";
+        }
+
+
+      } else {
+        gameRulesModal.classList.remove("startConfirmation");
+      }
+
+    })
+
+    // ShareButton
+    // As mentioned in MDN docs, you can only use navigator.share() over HTTPS
+    let shareData = {
+      title: "GAPSK AR挑戰榜",
+      text: "一起來挑戰吧！",
+      url: "https://www.gapsk.org/ccsc/",
+    }
+
+    const shareButton = document.querySelector('#shareButton');
+
+    shareButton.addEventListener('click', () => {
+      navigator.share(shareData)
+        .then(() =>
+          console.log('AR shared successfully')
+        )
+        .catch((e) =>
+          console.log(`Error: ${err}`)
+        )
+    });
+
+
+  </script>
+
+</body>
+
+</html>

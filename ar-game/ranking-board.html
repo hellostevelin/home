@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-Hant-HK" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Noto Sans HK' rel='stylesheet'>
+  <link rel="stylesheet" href="css/custom.css">
+  <title>GAPSK AR挑戰榜 - 排行榜</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <style>
+
+  </style>
+</head>
+
+<body class="h-100">
+  <div class="wrapper h-100" id="app">
+    <div class="subpage ranking-board h-100">
+      <div class="container h-100 d-flex flex-column">
+        
+        <div class="top-nav position-relative mb-5">
+          <h1 class="h1 fw-bold web-title ranking-board-title">GAPSK AR挑戰榜 - 排行榜</h1>
+          <a class="position-absolute top-50 start-0 translate-middle-y btn btn-back" href="index.html" title="返回主頁">返回主頁</a>
+        </div>
+      
+
+        <div class="list-group list-group-horizontal text-center " id="list-tab" role="tablist">
+          <a
+            data-bs-toggle="list"
+            v-bind:class="
+              'list-group-item list-group-item-action ' + 
+              (index === rankingListGroup.length - 1 ? 'rounded-end-pill' : '') +
+              (index === 0 ? 'rounded-start-pill active' : '') 
+              "
+            v-bind:href="'#list-'+ index"
+            role="tab"
+            v-for="rankingList,index in rankingListGroup"
+            v-bind:aria-controls="'group-'+ index"
+            v-bind:id="'group-'+ index + '-list'"
+            v-html="rankingList.groupName"
+          ></a>
+        </div>
+
+        <div class="tab-content overflow-y-auto flex-grow-1" id="nav-tabContent">
+
+          <div
+            role="tabpanel"
+            v-bind:class="'tab-pane fade ' + (index === 0 ? 'show active' : '')"
+            v-bind:aria-labelledby="'group-' + index + '-list'"
+            v-for="group,index in rankingListGroup"
+            v-bind:id="'list-'+ index"
+
+          >
+            <p class="py-3 my-0" v-html="group.description"></p>
+
+            <div class="ranking-board-header rounded-4 fw-medium fs-7 bg-primary text-white p-2 position-sticky top-0">
+              <div class="row text-center g-2">
+                <div class="col">名次</div>
+                <div class="col">參賽者</div>
+                <div class="col">得分</div>
+                <div class="col">用時</div>
+              </div>
+            </div>
+            
+            <div class="ranking-board-list">
+              <div class="bg-white ranking-board-row rounded-4 p-2" v-for="rankingItem in group.rankingList">
+                <div class="row text-center g-2">
+                  <div class="col d-flex align-items-center justify-content-center" v-html="rankingItem.ranking"></div>
+                  <div class="col">
+                    <div class="fw-bold" v-html="rankingItem.player"></div>
+                    <div class="fs-7" v-html="rankingItem.school"></div>
+                  </div>
+                  <div class="col d-flex align-items-center justify-content-center" v-html="rankingItem.score"></div>
+                  <div class="col d-flex align-items-center justify-content-center" v-html="rankingItem.time"></div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        
+        <div class="fixed-bottom">
+          <div class="container">
+            <div class="ranking-board-row bg-primary text-white rounded-4 p-2 mb-0">
+              <div class="row text-center ranking-board-row g-2">
+                <div class="col d-flex align-items-center justify-content-center">199</div>
+                <div class="col">
+                  <div class="fw-bold">陳XX(您)</div>
+                  <div class="fs-7">基督教呂明才小學</div>
+                </div>
+                <div class="col d-flex align-items-center justify-content-center">99</div>
+                <div class="col d-flex align-items-center justify-content-center">00:10:34</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--  -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!',
+        rankingListGroup: [
+          {
+            groupName: "初小組",
+            description: "初小組：小一及小二學生（1-10名）",
+            rankingList: [
+              {
+                ranking: 1,
+                player: '陳大文',
+                school: '初小',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 2,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 3,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 4,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 5,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              },{
+                ranking: 6,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 7,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 8,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 9,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 10,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }
+            ]
+          },{
+            groupName: "中小組",
+            description: "中小組：小三及小四學生（1-10名）",
+            rankingList: [
+              {
+                ranking: 1,
+                player: '陳大文',
+                school: '中小',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 2,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 3,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 4,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 5,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              },{
+                ranking: 6,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 7,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 8,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 9,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 10,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }
+            ]
+          },{
+            groupName: "高小組",
+            description: "高小組：小五及小六學生（1-10名）",
+            rankingList: [
+              {
+                ranking: 1,
+                player: '陳大文',
+                school: '高小',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 2,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 3,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 4,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 5,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              },{
+                ranking: 6,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 7,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 8,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 9,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }, {
+                ranking: 10,
+                player: '陳大文',
+                school: '基督教呂明才小學',
+                score: 99,
+                time: '00:10:34'
+              }
+            ]
+          }
+        ]
+      }
+    })
+  </script>
+
+</body>
+
+</html>

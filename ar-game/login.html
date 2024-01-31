@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Noto Sans HK' rel='stylesheet'>
+  <link rel="stylesheet" href="css/custom.css">
+  <title>GAPSK AR挑戰榜 - 登入</title>
+
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="subpage">
+      <div class="container">
+        <div class="top-nav position-relative mb-5">
+          <a href="index.html" title="AR挑戰榜"><h1 class="h1 fw-bold web-title">AR挑戰榜 - 登入</h1></a>
+          <a class="position-absolute top-50 start-0 translate-middle-y btn btn-back" href="index.html" title="返回主頁">返回主頁</a>
+        </div>
+       
+        <div class="login-form">
+          <form class="registration-form needs-validation" novalidate>
+            <div class="d-flex flex-column">
+              <div class="row">
+                <div class="col mb-4">
+                  <label for="lastNameCN" class="form-label">姓（中文）</label>
+                  <input type="text" class="form-control" id="lastNameCN" placeholder="姓" required>
+                  <div class="invalid-feedback">
+                    必須填寫此項目
+                  </div>
+                </div>
+                <div class="col mb-4">
+                  <label for="firstNameCN" class="form-label">名（中文）</label>
+                  <input type="text" class="form-control" id="firstNameCN" placeholder="名" required>
+                  <div class="invalid-feedback">
+                    必須填寫此項目
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="email" class="form-label">電郵地址</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="電郵地址" required>
+                <div class="invalid-feedback">
+                  必須填寫此項目
+                </div>
+                <div id="emailHelp" class="form-text mt-2">💡 使用已驗證的登記電郵地址即可進入系統</div>
+              </div>
+              
+              <div class="mb-4 form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">記住我的登入</label>
+              </div>
+
+              <button type="submit" class="btn btn-lg btn-primary w-100 mt-4">登入</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--  -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+    (() => {
+      'use strict'
+
+      const forms = document.querySelectorAll('.needs-validation')
+
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+
+
+  </script>
+
+</body>
+
+</html>
